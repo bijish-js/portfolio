@@ -1,6 +1,6 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,28 +8,50 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="container1">
+      <slot />
+    </div>
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background-color: #F6F6F6;
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+  @import url("https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Prompt:wght@600&display=swap");
+  :root {
+    --accent: 124, 58, 237;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      #da62c4 30%,
+      white 60%
+    );
+    --shade1: #292929;
+    --shade2: #4d4d4d;
+    --shade3: #898989;
+    --shade4: #ffffff;
+    --font-bold: "Prompt", sans-serif;
+    --font-light: "Karla", sans-serif;
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background-color: var(--shade1);
+  }
+  body {
+    margin: 0px;
+  }
+  .container1 {
+    max-width: 1440px;
+    margin: 0px auto;
+  }
+  .container2 {
+    max-width: 1400px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 </style>

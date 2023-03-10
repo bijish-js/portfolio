@@ -1,0 +1,66 @@
+---
+const personImageURL = "./../images/bijish.png";
+---
+
+<header class="container2 header circle-bg">
+  <p>Head</p>
+  <div class="circle-center-content">
+    <img src={personImageURL} class="person-image" />
+    <label class="person-label">FULL STACK DEVELOPER</label>
+    <h1 class="person-name">BIJISH O B</h1>
+    <nav class="navigation">
+      <a href="#" class="nav-link">EXPERIENCE</a>
+      <a href="#" class="nav-link">SKILLS</a>
+      <a href="#" class="nav-link">PROJECTS</a>
+      <a href="#" class="nav-link">ABOUT</a>
+    </nav>
+  </div>
+</header>
+
+<p>body</p>
+
+<style>
+  .header {
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+  .circle-bg {
+    height: 100vh;
+    background-image: url("../../images/circles.svg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+  }
+  .circle-center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background-color: red; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .person-image {
+    border-radius: 50%;
+    width: 140px;
+    filter: grayscale(10%) contrast(100%);
+  }
+  .person-label {
+    color: var(--shade3);
+    font-family: var(--font-light);
+    padding-top: 12px;
+  }
+  .person-name {
+    color: var(--shade4);
+    font-family: var(--font-bold);
+  }
+  @media screen and (max-width: 768px) {
+    .circle-bg {
+      background-size: cover;
+    }
+  }
+</style>
