@@ -1,0 +1,54 @@
+---
+import ProgressBar from "./ProgressBar.astro";
+export interface Props {}
+
+const {} = Astro.props;
+---
+
+<section class="skills-section-outer">
+  <div class="skills-section-inner container2">
+    <img src="./../images/circle-grid-vertical.svg" class="skills-dot" />
+
+    <div class="skills-progress">
+      <h2 class="skills-heading">Skills</h2>
+      <div class="skills-progress-items">
+        <div>
+          <span></span>
+          <ProgressBar progress="80%" />
+        </div>
+      </div>
+    </div>
+    <div class="skills-known">
+      <h2 class="skills-heading">Skills</h2>
+      <div class="skills-progress-items">
+        <div>
+          <span></span>
+          <ProgressBar progress="80%" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+  .skills-section-outer {
+    position: relative;
+  }
+  .skills-section-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  .skills-progress {
+    flex: 1;
+  }
+  .skills-known {
+    flex: 1;
+  }
+  .skills-dot {
+    max-width: 80px;
+    width: 100%;
+    opacity: 0.3;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+  }
+</style>

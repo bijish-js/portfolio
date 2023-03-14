@@ -1,0 +1,50 @@
+---
+import { experienceData } from "../data/changeableData";
+import WorkCard from "./WorkCard.astro";
+const circleGridURL = "./../images/circle-grid.svg";
+---
+
+<section class="container2 experience-section" id="experience">
+  <h2 class="experience-heading">Work Experience</h2>
+  <img src="./../images/circle-grid.svg" alt="" class="experience-dot" />
+
+  <div class="experience-cards">
+    {
+      experienceData.map((item) => {
+        return <WorkCard {...item} />;
+      })
+    }
+  </div>
+</section>
+
+<style>
+  .experience-section {
+    padding-top: 20px;
+    position: relative;
+    margin-top: 100px;
+  }
+  .experience-dot {
+    max-width: 160px;
+    width: 100%;
+    opacity: 0.3;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+  }
+  .experience-heading {
+    margin: 0px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: var(--font-bold);
+    color: var(--shade4);
+    font-size: 40px;
+  }
+  .experience-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+    row-gap: 32px;
+
+    padding-top: 60px;
+  }
+</style>

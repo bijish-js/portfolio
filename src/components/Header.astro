@@ -3,28 +3,45 @@ const personImageURL = "./../images/bijish.png";
 ---
 
 <header class="container2 header circle-bg">
-  <p>Head</p>
+  <div class="social top-spacing">
+    <a href="https://www.linkedin.com/in/bijishob" target="_blank">
+      <i class="fa-brands fa-linkedin-in icon-color"></i></a
+    >
+    <a href="    https://github.com/bijish-js
+    " target="_blank">
+      <i class="fa-brands fa-github-alt icon-color"></i>
+    </a>
+  </div>
   <div class="circle-center-content">
     <img src={personImageURL} class="person-image" />
     <label class="person-label">FULL STACK DEVELOPER</label>
     <h1 class="person-name">BIJISH O B</h1>
     <nav class="navigation">
-      <a href="#" class="nav-link">EXPERIENCE</a>
+      <a href="#experience" class="nav-link">EXPERIENCE</a>
       <a href="#" class="nav-link">SKILLS</a>
       <a href="#" class="nav-link">PROJECTS</a>
       <a href="#" class="nav-link">ABOUT</a>
     </nav>
   </div>
+  <div class="action top-spacing" role="button">
+    <i class="fa-solid fa-envelope icon-color"></i>
+    <span class="action-text">GET IN TOUCH</span>
+  </div>
+  <div class="action-big" role="button">
+    <i class="fa-solid fa-envelope icon-color"></i>
+  </div>
 </header>
-
-<p>body</p>
 
 <style>
   .header {
     /* background-color: red; */
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
+    column-gap: 20px;
     position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-end: span;
   }
   .circle-bg {
     height: 100vh;
@@ -38,11 +55,11 @@ const personImageURL = "./../images/bijish.png";
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* background-color: red; */
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
   }
   .person-image {
     border-radius: 50%;
@@ -50,13 +67,77 @@ const personImageURL = "./../images/bijish.png";
     filter: grayscale(10%) contrast(100%);
   }
   .person-label {
-    color: var(--shade3);
+    color: var(--shade4);
     font-family: var(--font-light);
-    padding-top: 12px;
+    padding-top: 24px;
+    letter-spacing: 4px;
+    font-size: 16px;
+    opacity: 0.6;
   }
   .person-name {
     color: var(--shade4);
     font-family: var(--font-bold);
+    font-size: 56px;
+    margin: 0px;
+  }
+  .navigation {
+    display: flex;
+    column-gap: 10px;
+    box-sizing: border-box;
+    padding-top: 8px;
+  }
+  .nav-link {
+    text-decoration: none;
+    color: var(--shade3);
+    padding: 12px 36px;
+    border-radius: 24px;
+    border: 1px solid transparent;
+    transition: 0.3s opacity ease-in-out;
+    letter-spacing: 1px;
+    font-family: var(--font-light);
+    font-size: 16px;
+  }
+  .nav-link:hover {
+    border: 1px solid var(--shade4);
+    color: var(--shade4);
+  }
+  .social {
+    display: flex;
+    column-gap: 12px;
+    align-items: center;
+    height: min-content;
+  }
+  .action {
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+    height: min-content;
+    cursor: pointer;
+    justify-self: end;
+  }
+  .action-text {
+    color: var(--shade4);
+    font-family: var(--font-light);
+    font-size: 16px;
+  }
+  .top-spacing {
+    padding-top: 32px;
+  }
+  .action-big {
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+    border-radius: 16px;
+    background-color: var(--shade2);
+    font-size: 36px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    padding: 8px;
+    cursor: pointer;
   }
   @media screen and (max-width: 768px) {
     .circle-bg {

@@ -1,0 +1,66 @@
+---
+export interface Props {
+  jobPosition: string;
+  companyName: string;
+  dateStarted: string;
+  descriptionPoints: string[];
+}
+
+const { jobPosition, companyName, dateStarted, dateEnded, descriptionPoints } =
+  Astro.props;
+---
+
+<div class="experience-card">
+  <h3 class="job-position">{jobPosition}</h3>
+  <h4 class="company-name">{companyName}</h4>
+  <p class="date-info">{`${dateStarted} - ${dateEnded}`}</p>
+  <ul class="description-points">
+    {
+      descriptionPoints.map((item: string) => {
+        return <li>{item}</li>;
+      })
+    }
+  </ul>
+</div>
+<style>
+  .experience-card {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    opacity: 0.5;
+    border-radius: 24px;
+    border: 1px solid var(--shade2);
+    column-gap: 16px;
+    transition: 0.3s opacity ease-in-out;
+  }
+  .experience-card:hover {
+    opacity: 1;
+    background-color: var(--shade2);
+  }
+  .job-position {
+    font-family: var(--font-bold);
+    color: var(--shade4);
+    font-size: 30px;
+    margin: 0px;
+  }
+  .company-name {
+    font-family: var(--font-bold);
+    color: var(--shade4);
+    font-size: 26px;
+    margin: 0px;
+  }
+  .date-info {
+    font-family: var(--font-light);
+    color: var(--shade4);
+    font-size: 16px;
+    margin: 0px;
+    padding: 16px 0px;
+  }
+  .description-points {
+    font-family: var(--font-light);
+    color: var(--shade4);
+    font-size: 16px;
+    padding: 0px 0px 0px 15px;
+    opacity: 0.8;
+  }
+</style>

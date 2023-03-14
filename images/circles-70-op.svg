@@ -1,9 +1,9 @@
 <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 651 522" width="651" height="522">
 	<title>circles-svg</title>
 	<style>
-		.s0 { opacity: .5;fill: none;stroke: #b3b3b3 } 
+		.s0 { opacity: .7;fill: none;stroke: #b3b3b3 } 
 	</style>
-	<g id="Layer" style="opacity: .3">
+	<g id="Layer">
 		<path id="Layer" class="s0" d="m325 356c-88.5 0-160-71.5-160-160 0-88.5 71.5-160 160-160 88.5 0 160 71.5 160 160 0 88.5-71.5 160-160 160z"/>
 		<path id="Layer" class="s0" d="m325 406c-116.1 0-210-93.9-210-210 0-116.1 93.9-210 210-210 116.1 0 210 93.9 210 210 0 116.1-93.9 210-210 210z"/>
 		<path id="Layer" class="s0" d="m325 458.5c-145.2 0-262.5-117.3-262.5-262.5 0-145.2 117.3-262.5 262.5-262.5 145.2 0 262.5 117.3 262.5 262.5 0 145.2-117.3 262.5-262.5 262.5z"/>
