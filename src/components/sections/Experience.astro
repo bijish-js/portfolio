@@ -1,7 +1,6 @@
 ---
-import { experienceData } from "../data/changeableData";
-import WorkCard from "./WorkCard.astro";
-const circleGridURL = "./../images/circle-grid.svg";
+import { experienceData } from "../../data/changeableData";
+import WorkCard from "../cards/WorkCard.astro";
 ---
 
 <section class="container2 experience-section" id="experience">
@@ -41,8 +40,8 @@ const circleGridURL = "./../images/circle-grid.svg";
   }
   .experience-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 32px;
+    grid-template-columns: 1fr;
+    column-gap: 30px;
     row-gap: 32px;
 
     padding-top: 60px;

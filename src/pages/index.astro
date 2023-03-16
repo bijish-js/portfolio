@@ -1,16 +1,20 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Experience from "../components/Experience.astro";
-import Skills from "../components/Skills.astro";
+import Layout from "../components/layouts/Layout.astro";
+import Header from "../components/sections/Header.astro";
+import Experience from "../components/sections/Experience.astro";
+import Skills from "../components/sections/Skills.astro";
+import Projects from "../components/sections/Projects.astro";
+import About from "../components/sections/About.astro";
+import Footer from "../components/sections/Footer.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <Header />
-  <main>
-    <Experience />
-  </main>
+  <Experience />
 </Layout>
 <Skills />
-
-<style></style>
+<Layout title="Welcome to Astro."><Projects /></Layout>
+<About />
+<Footer />
+<ScrollToTop />

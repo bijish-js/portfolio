@@ -1,0 +1,51 @@
+---
+import { projectData } from "../../data/changeableData";
+import ProjectCard from "../cards/ProjectCard.astro";
+const circleGridURL = "./../images/circle-grid.svg";
+---
+
+<section class="container2 projects-section" id="projects">
+  <h2 class="projects-heading">Projects</h2>
+
+  <div class="projects-cards">
+    {
+      projectData.map((item) => {
+        return <ProjectCard {...item} />;
+      })
+    }
+  </div>
+</section>
+
+<style>
+  .projects-section {
+    padding-top: 20px;
+    position: relative;
+    margin-top: 100px;
+  }
+  .projects-dot {
+    max-width: 160px;
+    width: 100%;
+    opacity: 0.3;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+  }
+  .projects-heading {
+    margin: 0px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: var(--font-bold);
+    color: var(--shade4);
+    font-size: 40px;
+  }
+  .projects-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
+
+    column-gap: 32px;
+    row-gap: 32px;
+
+    padding-top: 60px;
+  }
+</style>

@@ -1,0 +1,63 @@
+---
+import ProgressBar from "./ProgressBar.astro";
+import { aboutContent } from "../../data/changeableData";
+export interface Props {}
+
+const {} = Astro.props;
+---
+
+<section class="about-section-outer" id="about">
+  <div class="about-section-inner container2">
+    <img src="./images/circle-grid-10x10.svg" class="about-dot" />
+    <img src="./images/bijish.png" class="about-person-image" />
+    <div class="about-text">
+      <h2 class="about-heading">About</h2>
+      <p class="about-content">{aboutContent}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section-outer {
+    background: var(--shade2);
+    margin-top: 120px;
+  }
+  .about-section-inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 80px;
+    padding: 50px 0px;
+    padding-bottom: 60px;
+    position: relative;
+  }
+
+  .about-dot {
+    max-width: 150px;
+    width: 100%;
+    opacity: 0.3;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .about-heading {
+    font-family: var(--font-bold);
+    color: var(--shade4);
+    font-size: 40px;
+    margin: 0px;
+  }
+
+  .about-person-image {
+    border-radius: 24px;
+  }
+  .about-text {
+  }
+
+  .about-content {
+    font-family: var(--font-light);
+    line-height: 150%;
+    color: var(--shade4);
+    width: 80%;
+    font-size: 16px;
+  }
+</style>

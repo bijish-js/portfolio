@@ -2,7 +2,7 @@
 const personImageURL = "./../images/bijish.png";
 ---
 
-<header class="container2 header circle-bg">
+<header class="container2 header circle-bg" id="intro">
   <div class="social top-spacing">
     <a href="https://www.linkedin.com/in/bijishob" target="_blank">
       <i class="fa-brands fa-linkedin-in icon-color"></i></a
@@ -18,18 +18,22 @@ const personImageURL = "./../images/bijish.png";
     <h1 class="person-name">BIJISH O B</h1>
     <nav class="navigation">
       <a href="#experience" class="nav-link">EXPERIENCE</a>
-      <a href="#" class="nav-link">SKILLS</a>
-      <a href="#" class="nav-link">PROJECTS</a>
-      <a href="#" class="nav-link">ABOUT</a>
+      <a href="#skills" class="nav-link">SKILLS</a>
+      <a href="#projects" class="nav-link">PROJECTS</a>
+      <a href="#about" class="nav-link">ABOUT</a>
     </nav>
   </div>
   <div class="action top-spacing" role="button">
-    <i class="fa-solid fa-envelope icon-color"></i>
-    <span class="action-text">GET IN TOUCH</span>
+    <a href="mailto:bijish.o.b@gmail.com" class="mail-to mail-to-in-action">
+      <i class="fa-solid fa-envelope icon-color"></i>
+      <span class="action-text">GET IN TOUCH</span>
+    </a>
   </div>
-  <div class="action-big" role="button">
-    <i class="fa-solid fa-envelope icon-color"></i>
-  </div>
+  <a href="mailto:bijish.o.b@gmail.com" class="mail-to">
+    <div class="action-big" role="button">
+      <i class="fa-solid fa-envelope icon-color"></i>
+    </div>
+  </a>
 </header>
 
 <style>
@@ -115,6 +119,14 @@ const personImageURL = "./../images/bijish.png";
     cursor: pointer;
     justify-self: end;
   }
+  .mail-to-in-action {
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+    height: min-content;
+    cursor: pointer;
+    justify-self: end;
+  }
   .action-text {
     color: var(--shade4);
     font-family: var(--font-light);
@@ -138,6 +150,9 @@ const personImageURL = "./../images/bijish.png";
     aspect-ratio: 1/1;
     padding: 8px;
     cursor: pointer;
+  }
+  .mail-to {
+    text-decoration: none;
   }
   @media screen and (max-width: 768px) {
     .circle-bg {

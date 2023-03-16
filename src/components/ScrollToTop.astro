@@ -1,0 +1,64 @@
+<div class="scroll-up-wrap">
+  <a href="#intro" id="scroll-to-top-btn" title="Scroll to top"
+    ><i class="fa-solid fa-jet-fighter-up icon-ref"></i></a
+  >
+</div>
+
+<script>
+  const scrollToTopBtn = document.querySelector("#scroll-to-top-btn");
+
+  window.addEventListener("scroll", () => {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      scrollToTopBtn.classList.add("sticky");
+    } else {
+      scrollToTopBtn.classList.remove("sticky");
+    }
+  });
+</script>
+<style>
+  #scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    background-color: var(--shade3);
+    color: var(--shade4);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    opacity: 0.08;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 9999;
+  }
+
+  #scroll-to-top-btn:hover {
+    background-color: var(--shade3);
+  }
+
+  /* Show button when user scrolls down */
+  body:not(:hover) #scroll-to-top-btn,
+  body:hover #scroll-to-top-btn:hover {
+    opacity: 1;
+  }
+
+  /* Sticky button */
+  #scroll-to-top-btn.sticky {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+  }
+  .scroll-up-wrap {
+    width: 100%;
+    background: red;
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+  }
+  .icon-ref {
+    font-size: 30px;
+  }
+</style>
