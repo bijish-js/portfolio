@@ -50,6 +50,7 @@ const {
     opacity: 0.8;
     border-radius: 24px;
     border: 1px solid var(--shade2);
+    row-gap: 24px;
   }
   .experience-card {
     display: flex;
@@ -96,5 +97,34 @@ const {
   .code-icon {
     font-size: 64px;
     color: var(--shade3);
+  }
+  @media screen and (max-width: 600px) {
+    .experience-card-outer {
+      flex-direction: column;
+    }
+    .experience-card {
+      display: flex;
+      flex-direction: column;
+
+      column-gap: 16px;
+      width: 100%;
+    }
+    .job-position {
+      font-size: 28px;
+    }
+    .company-name {
+      font-size: 25px;
+    }
+  }
+  @media screen and (max-width: 340px) {
+    .skill-card {
+      padding: 24px;
+    }
+    .job-position {
+      font-size: 23px;
+    }
+    .company-name {
+      font-size: 20px;
+    }
   }
 </style>

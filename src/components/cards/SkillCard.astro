@@ -41,5 +41,11 @@ const { skill, icon } = Astro.props;
     color: var(--shade4);
     font-size: 16px;
     margin: 0px;
+    text-align: center;
+  }
+  @media screen and (max-width: 340px) {
+    .skill-card {
+      padding: 24px;
+    }
   }
 </style>

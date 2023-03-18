@@ -1,0 +1,23 @@
+<style>
+  background: linear-gradient(
+    to right,
+    var(--shade2) 0%,
+    var(--shade2) 50%,
+    var(--shade1) 50%,
+    var(--shade1) 100%
+  );
+</style>
+<div class="skills-progress-items">
+  {
+    skills.map(({ name, progress }) => {
+      return (
+        <div class="skill-progress-item">
+          <span class="skill-progress-name">{name}</span>
+          <div class="skill-progressbar-wrap">
+            <ProgressBar progress={progress} />
+          </div>
+        </div>
+      );
+    })
+  }
+</div>

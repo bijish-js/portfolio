@@ -7,48 +7,28 @@ export interface Props {}
 const {} = Astro.props;
 ---
 
-<section class="skills-section-outer" id="skills">
-  <div class="skills-section-inner container2">
+<section class="skills-section-outer container2" id="skills">
+  <div class="skills-section-inner">
     <div class="skills-progress">
       <h2 class="skills-heading">Skills</h2>
-      <div class="skills-progress-items">
+      <div class="skills-known">
         {
-          skills.map(({ name, progress }) => {
+          skills.map(({ name, icon }) => {
             return (
-              <div class="skill-progress-item">
-                <span class="skill-progress-name">{name}</span>
-                <div class="skill-progressbar-wrap">
-                  <ProgressBar progress={progress} />
-                </div>
+              <div class="skill-card-wrap">
+                <SkillCard skill={name} icon={icon} />
               </div>
             );
           })
         }
       </div>
     </div>
-    <div class="skills-known">
-      {
-        skills.map(({ name, icon }) => {
-          return (
-            <div class="skill-card-wrap">
-              <SkillCard skill={name} icon={icon} />
-            </div>
-          );
-        })
-      }
-    </div>
   </div>
 </section>
 <style>
   .skills-section-outer {
     position: relative;
-    background: linear-gradient(
-      to right,
-      var(--shade2) 0%,
-      var(--shade2) 50%,
-      var(--shade1) 50%,
-      var(--shade1) 100%
-    );
+
     margin-top: 140px;
   }
   .skills-section-inner {
@@ -62,7 +42,7 @@ const {} = Astro.props;
     flex: 1;
     display: flex;
     flex-direction: column;
-    row-gap: 24px;
+    row-gap: 80px;
   }
   .skills-known {
     flex: 1;
@@ -80,6 +60,7 @@ const {} = Astro.props;
     color: var(--shade4);
     font-size: 40px;
     margin: 0px;
+    text-align: center;
   }
   .skills-progress-items {
     font-family: var(--font-bold);
@@ -107,13 +88,35 @@ const {} = Astro.props;
   }
   .skills-known {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr);
     column-gap: 32px;
     row-gap: 32px;
   }
   .skill-card-wrap {
     display: flex;
     align-items: center;
+  }
+  @media screen and (max-width: 1070px) {
+    .skills-known {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .skills-known {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .skills-known {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .skills-known {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .skills-section-inner {
+      padding-top: 0px;
+    }
   }
 </style>
