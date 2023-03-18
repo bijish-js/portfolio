@@ -51,46 +51,46 @@ export const skills = [
     {
         name: "React JS",
         progress: "80%",
-        icon: "../images/React-js.png"
+        icon: "/portfolio/images/React-js.png"
     },
     {
         name: "Next JS",
         progress: "80%",
-        icon: "../images/Next-js.png"
+        icon: "/portfolio/images/Next-js.png"
     },
     {
         name: "GraphQL",
         progress: "80%",
-        icon: "../images/Graphql.png"
+        icon: "/portfolio/images/Graphql.png"
     },
     {
         name: "Node JS",
         progress: "80%",
-        icon: "../images/Node-js.png"
+        icon: "/portfolio/images/Node-js.png"
     }, {
         name: "Express JS",
         progress: "80%",
-        icon: "../images/Express-js.png"
+        icon: "/portfolio/images/Express-js.png"
     }
     , {
         name: "MongoDB",
         progress: "80%",
-        icon: "../images/Mongodb.svg"
+        icon: "/portfolio/images/Mongodb.svg"
     },
     , {
         name: "TypeScript",
         progress: "80%",
-        icon: "../images/Typescript.png"
+        icon: "/portfolio/images/Typescript.png"
     },
     , {
         name: "Astro",
         progress: "80%",
-        icon: "../images/astro.png"
+        icon: "/portfolio/images/astro.png"
     },
     , {
         name: "Recoil",
         progress: "80%",
-        icon: "../images/recoil.png"
+        icon: "/portfolio/images/recoil.png"
     },
 ]
 
@@ -98,17 +98,17 @@ export const projectData = [
     {
         title: "Project 1",
         description: "This is project 1 description.",
-        image: "../images/placeholder.svg"
+        image: "/portfolio/images/placeholder.svg"
     },
     {
         title: "Project 2",
         description: "This is project 2 description.",
-        image: "../images/placeholder.svg"
+        image: "/portfolio/images/placeholder.svg"
     },
     {
         title: "Project 3",
         description: "This is project 3 description.",
-        image: "../images/placeholder.svg"
+        image: "/portfolio/images/placeholder.svg"
     },
 
 ]
