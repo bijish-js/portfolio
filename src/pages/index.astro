@@ -1,5 +1,6 @@
 ---
 import Layout from "../components/layouts/Layout.astro";
+import ContainerLayout from "../components/layouts/containerLayout.astro";
 import Header from "../components/sections/Header.astro";
 import Experience from "../components/sections/Experience.astro";
 import Skills from "../components/sections/Skills.astro";
@@ -10,11 +11,16 @@ import ScrollToTop from "../components/ScrollToTop.astro";
 ---
 
 <Layout title="Bijish O B">
-  <Header />
-  <Experience />
+  <ContainerLayout>
+    <Header />
+    <Experience />
+  </ContainerLayout>
+  <Skills />
+  <ContainerLayout>
+    <Projects />
+  </ContainerLayout>
+
+  <About />
+  <Footer />
+  <!-- <ScrollToTop /> -->
 </Layout>
-<Skills />
-<Layout title="Bijish O B"><Projects /></Layout>
-<About />
-<Footer />
-<ScrollToTop />
