@@ -51,46 +51,46 @@ export const skills = [
     {
         name: "React JS",
         progress: "80%",
-        icon: "/portfolio/images/React-js.png"
+        icon: "/images/React-js.png"
     },
     {
         name: "Next JS",
         progress: "80%",
-        icon: "/portfolio/images/Next-js.png"
+        icon: "/images/Next-js.png"
     },
     {
         name: "GraphQL",
         progress: "80%",
-        icon: "/portfolio/images/Graphql.png"
+        icon: "/images/Graphql.png"
     },
     {
         name: "Node JS",
         progress: "80%",
-        icon: "/portfolio/images/Node-js.png"
+        icon: "/images/Node-js.png"
     }, {
         name: "Express JS",
         progress: "80%",
-        icon: "/portfolio/images/Express-js.png"
+        icon: "/images/Express-js.png"
     }
     , {
         name: "MongoDB",
         progress: "80%",
-        icon: "/portfolio/images/Mongodb.svg"
+        icon: "/images/Mongodb.svg"
     },
     , {
         name: "TypeScript",
         progress: "80%",
-        icon: "/portfolio/images/Typescript.png"
+        icon: "/images/Typescript.png"
     },
     , {
         name: "Astro",
         progress: "80%",
-        icon: "/portfolio/images/astro.png"
+        icon: "/images/astro.png"
     },
     , {
         name: "Recoil",
         progress: "80%",
-        icon: "/portfolio/images/recoil.png"
+        icon: "/images/recoil.png"
     },
 ]
 
@@ -98,17 +98,17 @@ export const projectData = [
     {
         title: "Project 1",
         description: "This is project 1 description.",
-        image: "/portfolio/images/placeholder.svg"
+        image: "/images/placeholder.svg"
     },
     {
         title: "Project 2",
         description: "This is project 2 description.",
-        image: "/portfolio/images/placeholder.svg"
+        image: "/images/placeholder.svg"
     },
     {
         title: "Project 3",
         description: "This is project 3 description.",
-        image: "/portfolio/images/placeholder.svg"
+        image: "/images/placeholder.svg"
     },
 
 ]
