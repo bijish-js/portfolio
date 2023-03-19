@@ -1,0 +1,60 @@
+---
+import Layout from "../components/layouts/Layout.astro";
+import ContainerLayout from "../components/layouts/containerLayout.astro";
+import Navbar from "../components/sections/Navbar.astro";
+import { ghostClient } from "../lib/ghost";
+const posts = await ghostClient.posts
+  .browse({
+    limit: "all",
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+---
+
+<Layout title="Posts">
+  <ContainerLayout>
+    <div class="container2">
+      <Navbar />
+      <ul class="blog-post-list">
+        {
+          posts.map((post) => (
+            <li class="blog-post-item">
+              {" "}
+              <a href={`/blog/${post.slug}`} class="blog-post-link">
+                <span class="blog-post-link-title">{post.title}</span>
+                <span class="blog-post-link-read-time">
+                  {post.reading_time} min read
+                </span>{" "}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </ContainerLayout>
+</Layout>
+<style>
+  .blogs-heading {
+    font-family: var(--font-bold);
+    color: var(--shade4);
+  }
+  .blog-post-list {
+    list-style: disc;
+    color: var(--shade4);
+  }
+  .blog-post-item {
+  }
+  .blog-post-link {
+    text-decoration: none;
+    color: var(--shade4);
+    display: flex;
+    justify-content: space-between;
+  }
+  .blog-post-link-title {
+    font-family: var(--font-bold);
+  }
+  .blog-post-link-read-time {
+    font-family: var(--font-light);
+  }
+</style>
