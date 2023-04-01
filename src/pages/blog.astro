@@ -42,6 +42,10 @@ const posts = await ghostClient.posts
   .blog-post-list {
     list-style: disc;
     color: var(--shade4);
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    padding: 0px 20px;
   }
   .blog-post-item {
   }
@@ -49,7 +53,8 @@ const posts = await ghostClient.posts
     text-decoration: none;
     color: var(--shade4);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    row-gap: 8px;
   }
   .blog-post-link-title {
     font-family: var(--font-bold);
