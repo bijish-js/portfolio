@@ -1,9 +1,14 @@
 ---
+import { SEO } from "astro-seo";
+
 export interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+const description =
+  "Hi, I'm Bijish O B, a MERN stack developer based in Kerala, India. I offer technology solutions that enable businesses to thrive in the online space.";
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <!DOCTYPE html>
@@ -13,125 +18,141 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="publisher" content="Bijish O B" />
+    <meta
+      name="keywords"
+      content="Bijish O B, MERN stack development, React development, Node.js development, MongoDB development, Full-stack development, Web development, Custom web applications, API development, GraphQL development, JavaScript development, Front-end development, Back-end development, E-commerce development, Mobile-first development, Responsive web design, Performance optimization,  Agile development, Scrum methodologies, Project management, Collaboration, Communication, Client satisfaction, Problem-solving, Creativity"
+    />
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonicalURL}
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+      }}
+    />
     <title>{title}</title>
   </head>
   <body>
     <slot />
+    <script
+      src="https://kit.fontawesome.com/39586ac0c0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Some random colors
+      // const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
+
+      const colors = ["#292929", "#4d4d4d", "#898989", "#ffffff", "#F85F36"];
+
+      const numBalls = 50;
+      const balls = [];
+
+      for (let i = 0; i < numBalls; i++) {
+        let ball = document.createElement("div");
+        ball.classList.add("ball");
+        ball.style.background =
+          colors[Math.floor(Math.random() * colors.length)];
+        ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
+        ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+        ball.style.transform = `scale(${Math.random()})`;
+        ball.style.width = `${Math.random()}em`;
+        ball.style.height = ball.style.width;
+
+        balls.push(ball);
+        document.getElementById("intro").append(ball);
+      }
+
+      // Keyframes
+      balls.forEach((el, i, ra) => {
+        let to = {
+          x: Math.random() * (i % 2 === 0 ? -11 : 11),
+          y: Math.random() * 12,
+        };
+
+        let anim = el.animate(
+          [
+            { transform: "translate(0, 0)" },
+            { transform: `translate(${to.x}rem, ${to.y}rem)` },
+          ],
+          {
+            duration: (Math.random() + 1) * 2000, // random duration
+            direction: "alternate",
+            fill: "both",
+            iterations: Infinity,
+            easing: "ease-in-out",
+          }
+        );
+      });
+    </script>
+    <style is:global>
+      @import url("https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Prompt:wght@600&display=swap");
+      :root {
+        --accent: 124, 58, 237;
+        --accent-gradient: linear-gradient(
+          45deg,
+          rgb(var(--accent)),
+          #da62c4 30%,
+          white 60%
+        );
+        --shade1: #292929;
+        --shade2: #4d4d4d;
+        --shade3: #898989;
+        --shade4: #ffffff;
+        --font-bold: "Prompt", sans-serif;
+        --font-light: "Karla", sans-serif;
+      }
+      html {
+        font-family: system-ui, sans-serif;
+        background-color: var(--shade1);
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0px;
+      }
+      .container1 {
+        max-width: 1440px;
+        margin: 0px auto;
+      }
+      .container2 {
+        max-width: 1300px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 0px auto;
+      }
+      .icon-color {
+        color: var(--shade4);
+      }
+      .ball {
+        position: absolute;
+        border-radius: 100%;
+        opacity: 0.7;
+      }
+      .html-wrap a {
+        color: var(--shade4) !important;
+        font-family: var(--font-light);
+      }
+      pre {
+        overflow-x: auto !important;
+        white-space: pre-wrap !important;
+        word-wrap: break-word !important;
+        background: #000;
+        padding: 8px;
+        font-size: 14px;
+      }
+      pre code {
+      }
+
+      .kg-card,
+      .kg-code-card {
+        margin: auto 0px;
+        background: var(--shade2);
+      }
+      figcaption {
+        padding: 0px 8px 8px 8px;
+        font-size: 15px;
+      }
+    </style>
   </body>
 </html>
-<script src="https://kit.fontawesome.com/39586ac0c0.js" crossorigin="anonymous"
-></script>
-<script>
-  // Some random colors
-  // const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
-
-  const colors = ["#292929", "#4d4d4d", "#898989", "#ffffff", "#F85F36"];
-
-  const numBalls = 50;
-  const balls = [];
-
-  for (let i = 0; i < numBalls; i++) {
-    let ball = document.createElement("div");
-    ball.classList.add("ball");
-    ball.style.background = colors[Math.floor(Math.random() * colors.length)];
-    ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
-    ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
-    ball.style.transform = `scale(${Math.random()})`;
-    ball.style.width = `${Math.random()}em`;
-    ball.style.height = ball.style.width;
-
-    balls.push(ball);
-    document.getElementById("intro").append(ball);
-  }
-
-  // Keyframes
-  balls.forEach((el, i, ra) => {
-    let to = {
-      x: Math.random() * (i % 2 === 0 ? -11 : 11),
-      y: Math.random() * 12,
-    };
-
-    let anim = el.animate(
-      [
-        { transform: "translate(0, 0)" },
-        { transform: `translate(${to.x}rem, ${to.y}rem)` },
-      ],
-      {
-        duration: (Math.random() + 1) * 2000, // random duration
-        direction: "alternate",
-        fill: "both",
-        iterations: Infinity,
-        easing: "ease-in-out",
-      }
-    );
-  });
-</script>
-<style is:global>
-  @import url("https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Prompt:wght@600&display=swap");
-  :root {
-    --accent: 124, 58, 237;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      #da62c4 30%,
-      white 60%
-    );
-    --shade1: #292929;
-    --shade2: #4d4d4d;
-    --shade3: #898989;
-    --shade4: #ffffff;
-    --font-bold: "Prompt", sans-serif;
-    --font-light: "Karla", sans-serif;
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    background-color: var(--shade1);
-    scroll-behavior: smooth;
-  }
-
-  body {
-    margin: 0px;
-  }
-  .container1 {
-    max-width: 1440px;
-    margin: 0px auto;
-  }
-  .container2 {
-    max-width: 1300px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 0px auto;
-  }
-  .icon-color {
-    color: var(--shade4);
-  }
-  .ball {
-    position: absolute;
-    border-radius: 100%;
-    opacity: 0.7;
-  }
-  .html-wrap a {
-    color: var(--shade4) !important;
-    font-family: var(--font-light);
-  }
-  pre {
-    overflow-x: auto !important;
-    white-space: pre-wrap !important;
-    word-wrap: break-word !important;
-    background: #000;
-    padding: 8px;
-    font-size: 14px;
-  }
-  pre code {
-  }
-
-  .kg-card,
-  .kg-code-card {
-    margin: auto 0px;
-    background: var(--shade2);
-  }
-  figcaption {
-    padding: 0px 8px 8px 8px;
-    font-size: 15px;
-  }
-</style>

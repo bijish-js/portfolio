@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tryghost/content-api": "^1.11.7",
-    "astro": "^2.0.18"
+    "astro": "^2.0.18",
+    "astro-seo": "^0.7.2"
   }
 }

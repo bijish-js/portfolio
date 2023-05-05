@@ -3,34 +3,40 @@ export interface Props {
   title: string;
   description: string;
   image: string;
+  link: string;
 }
 
-const { title, description, image } = Astro.props;
+const { title, description, image, link } = Astro.props;
 ---
 
-<div class="project-card">
-  <div class="project-card-image">
-    <img src={image} class="project-image" alt="project image" />
+<a href={link} class="project-card" target="_blank"
+  ><div>
+    <div class="project-card-image">
+      <img src={image} class="project-image" alt="project image" />
+    </div>
+    <div class="project-card-overlay">
+      <div class="project-title">{title}</div>
+      <p class="project-description">{description}</p>
+    </div>
   </div>
-  <div class="project-card-overlay">
-    <h3 class="project-title">{title}</h3>
-    <p class="project-description">{description}</p>
-  </div>
-</div>
-
+</a>
 <style>
   .project-card {
+    /* commented for testing */
     /* padding: 32px; */
     opacity: 1;
 
     transition: 0.3s opacity ease-in-out;
     position: relative;
     border-radius: 24px;
+    cursor: pointer;
+    background-color: var(--shade1);
   }
 
   .project-card:hover {
-    opacity: 0.5;
-    background-color: var(--shade2);
+    /* commented for testing */
+    /* opacity: 0.5; */
+    /* background-color: var(--shade2); */
   }
   .project-image {
     width: 100%;
@@ -54,8 +60,8 @@ const { title, description, image } = Astro.props;
     padding: 24px;
     box-sizing: border-box;
     border-radius: 24px;
-  }
-  .project-card:hover .project-card-overlay {
+
+    /* new code */
     opacity: 1;
     background: linear-gradient(
       to bottom,
@@ -64,11 +70,22 @@ const { title, description, image } = Astro.props;
     );
     border-radius: 24px;
   }
+  .project-card:hover .project-card-overlay {
+    /* commented for testing */
+    /* opacity: 1;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(0, 0, 0, 0.7)
+    );
+    border-radius: 24px; */
+  }
   .project-title {
     font-family: var(--font-bold);
     color: var(--shade4);
     font-size: 24px;
     margin: 0px;
+    font-weight: 600;
   }
 
   .project-description {
@@ -77,5 +94,6 @@ const { title, description, image } = Astro.props;
     font-size: 16px;
     margin: 0px;
     padding-top: 8px;
+    text-align: left;
   }
 </style>

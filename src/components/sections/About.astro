@@ -1,6 +1,6 @@
 ---
 import ProgressBar from "./ProgressBar.astro";
-import { aboutContent } from "../../data/changeableData";
+import { aboutContent, devDotToUrl } from "../../data/changeableData";
 export interface Props {}
 
 const {} = Astro.props;
@@ -11,8 +11,15 @@ const {} = Astro.props;
     <img src="/images/circle-grid-10x10.svg" class="about-dot" />
     <h2 class="about-heading-mobile">About</h2>
     <img src="/images/bijish.png" class="about-person-image" />
-    <div class="about-text">
-      <h2 class="about-heading">About</h2>
+    <div class="about-special-wrap">
+      <div class="about-text">
+        <h2 class="about-heading">About</h2>
+        <a href="https://dev.to/bijishjs" target="_blank" class="dev-to-link"
+          ><img src={devDotToUrl} class="devDotToImage" /><span
+            >dev.to/bijishjs</span
+          ></a
+        >
+      </div>
       <p class="about-content">{aboutContent}</p>
     </div>
   </div>
@@ -64,6 +71,8 @@ const {} = Astro.props;
     z-index: 10;
   }
   .about-text {
+    display: flex;
+    flex-direction: column;
   }
 
   .about-content {
@@ -73,6 +82,20 @@ const {} = Astro.props;
     width: 80%;
     font-size: 16px;
     z-index: 10;
+  }
+  .dev-to-link {
+    color: var(--shade4);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 8px;
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+  .devDotToImage {
+    aspect-ratio: 1/1;
+    max-width: 40px;
+    border-radius: 50%;
   }
   @media screen and (max-width: 1024px) {
     .about-section-inner {
@@ -85,6 +108,18 @@ const {} = Astro.props;
       padding-top: 50px;
       padding-bottom: 60px;
       position: relative;
+    }
+    .about-heading {
+      text-align: center;
+    }
+    .about-content {
+      width: 100%;
+    }
+    .about-heading-mobile {
+      display: block;
+    }
+    .about-heading {
+      display: none;
     }
   }
   @media screen and (max-width: 768px) {

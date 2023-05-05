@@ -19,11 +19,11 @@ const {
 
 <div class="experience-card-outer">
   <div class="experience-card">
-    <h3 class="job-position">{jobPosition}</h3>
+    <div class="job-position">{jobPosition}</div>
     <a class="company-link" href={companyLink || "#"} target="_blank"
-      ><h4 class="company-name">
+      ><div class="company-name">
         {companyName}
-      </h4></a
+      </div></a
     >
     <p class="date-info">{`${dateStarted} - ${dateEnded}`}</p>
     <ul class="description-points">
@@ -67,12 +67,14 @@ const {
     color: var(--shade4);
     font-size: 30px;
     margin: 0px;
+    font-weight: 600;
   }
   .company-name {
     font-family: var(--font-bold);
     color: var(--shade4);
     font-size: 26px;
     margin: 0px;
+    font-weight: 600;
   }
   .company-link {
     text-decoration: none;
