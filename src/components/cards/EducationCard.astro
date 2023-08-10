@@ -1,35 +1,27 @@
 ---
 export interface Props {
-  jobPosition: string;
-  companyName: string;
-  companyLink: string;
+  educationPosition: string;
+  authority: string;
   dateStarted: string;
   dateEnded: string;
   descriptionPoints: string[];
 }
 
 const {
-  jobPosition,
-  companyLink,
-  companyName,
+  educationPosition,
+  authority,
   dateStarted,
   dateEnded,
   descriptionPoints,
 } = Astro.props;
 ---
 
-<div class="experience-card-outer">
-  <div class="experience-card">
-    <div class="job-position">{jobPosition}</div>
-    {
-      companyLink ? (
-        <a class="company-link" href={companyLink || "#"} target="_blank">
-          <div class="company-name">{companyName}</div>
-        </a>
-      ) : (
-        <div class="company-name">{companyName}</div>
-      )
-    }
+<div class="education-card-outer">
+  <div class="education-card">
+    <div class="education-position">{educationPosition}</div>
+    <div class="authority-name">
+      {authority}
+    </div>
     <p class="date-info">{`${dateStarted} - ${dateEnded}`}</p>
     <ul class="description-points">
       {
@@ -39,11 +31,11 @@ const {
       }
     </ul>
   </div>
-  <div><i class="fa-solid fa-code code-icon"></i></div>
+  <div><i class="fa-solid fa-graduation-cap education-icon"></i></div>
 </div>
 
 <style>
-  .experience-card-outer {
+  .education-card-outer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -57,31 +49,31 @@ const {
     border: 1px solid var(--shade2);
     row-gap: 24px;
   }
-  .experience-card {
+  .education-card {
     display: flex;
     flex-direction: column;
 
     column-gap: 16px;
     width: 70%;
   }
-  .experience-card-outer:hover {
+  .education-card-outer:hover {
     opacity: 1;
   }
-  .job-position {
+  .education-position {
     font-family: var(--font-bold);
     color: var(--shade4);
     font-size: 30px;
     margin: 0px;
     font-weight: 600;
   }
-  .company-name {
+  .authority-name {
     font-family: var(--font-bold);
     color: var(--shade4);
     font-size: 26px;
     margin: 0px;
     font-weight: 600;
   }
-  .company-link {
+  .authority-link {
     text-decoration: none;
   }
   .date-info {
@@ -101,25 +93,25 @@ const {
     list-style: circle;
     line-height: 150%;
   }
-  .code-icon {
+  .education-icon {
     font-size: 64px;
     color: var(--shade3);
   }
   @media screen and (max-width: 600px) {
-    .experience-card-outer {
+    .education-card-outer {
       flex-direction: column;
     }
-    .experience-card {
+    .education-card {
       display: flex;
       flex-direction: column;
 
       column-gap: 16px;
       width: 100%;
     }
-    .job-position {
+    .education-position {
       font-size: 28px;
     }
-    .company-name {
+    .authority-name {
       font-size: 25px;
     }
   }
@@ -127,10 +119,10 @@ const {
     .skill-card {
       padding: 24px;
     }
-    .job-position {
+    .education-position {
       font-size: 23px;
     }
-    .company-name {
+    .authority-name {
       font-size: 20px;
     }
   }
