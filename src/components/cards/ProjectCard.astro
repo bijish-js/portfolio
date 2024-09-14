@@ -1,99 +1,103 @@
 ---
 export interface Props {
-  title: string;
-  description: string;
-  image: string;
-  link: string;
+	title: string;
+	description: string;
+	image: string;
+	link: string;
 }
 
 const { title, description, image, link } = Astro.props;
 ---
 
 <a href={link} class="project-card" target="_blank"
-  ><div>
-    <div class="project-card-image">
-      <img src={image} class="project-image" alt="project image" />
-    </div>
-    <div class="project-card-overlay">
-      <div class="project-title">{title}</div>
-      <p class="project-description">{description}</p>
-    </div>
-  </div>
+	><div>
+		<div class="project-card-image">
+			<img src={image} class="project-image" alt="project image" />
+		</div>
+		<div class="project-card-overlay">
+			<div class="project-title">{title}</div>
+			<p class="project-description">{description}</p>
+		</div>
+	</div>
 </a>
 <style>
-  .project-card {
-    /* commented for testing */
-    /* padding: 32px; */
-    opacity: 1;
+	.project-card {
+		/* commented for testing */
+		/* padding: 32px; */
+		opacity: 1;
 
-    transition: 0.3s opacity ease-in-out;
-    position: relative;
-    border-radius: 24px;
-    cursor: pointer;
-    background-color: var(--shade1);
-  }
+		transition: 0.3s opacity ease-in-out;
+		position: relative;
+		border-radius: 24px;
+		cursor: pointer;
+		background-color: var(--shade1);
+		min-height: 20vh;
+		height: 100%;
+	}
 
-  .project-card:hover {
-    /* commented for testing */
-    /* opacity: 0.5; */
-    /* background-color: var(--shade2); */
-  }
-  .project-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 24px;
-  }
-  .project-card-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    text-align: center;
-    padding: 24px;
-    box-sizing: border-box;
-    border-radius: 24px;
+	.project-card:hover {
+		/* commented for testing */
+		/* opacity: 0.5; */
+		/* background-color: var(--shade2); */
+	}
 
-    /* new code */
-    opacity: 1;
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0),
-      rgba(0, 0, 0, 0.7)
-    );
-    border-radius: 24px;
-  }
-  .project-card:hover .project-card-overlay {
-    /* commented for testing */
-    /* opacity: 1;
+	.project-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 24px;
+	}
+	.project-card-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: flex-start;
+		text-align: center;
+		padding: 24px;
+		box-sizing: border-box;
+		border-radius: 24px;
+
+		/* new code */
+		opacity: 1;
+		background: linear-gradient(
+			to bottom,
+			rgba(255, 255, 255, 0),
+			rgba(0, 0, 0, 0.7)
+		);
+		border-radius: 24px;
+	}
+	.project-card:hover .project-card-overlay {
+		/* commented for testing */
+		/* opacity: 1;
     background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0),
       rgba(0, 0, 0, 0.7)
     );
     border-radius: 24px; */
-  }
-  .project-title {
-    font-family: var(--font-bold);
-    color: var(--shade4);
-    font-size: 24px;
-    margin: 0px;
-    font-weight: 600;
-  }
+	}
+	.project-title {
+		font-family: var(--font-bold);
+		color: var(--shade4);
+		font-size: 20px;
+		margin: 0px;
+		font-weight: 600;
+		text-align: left;
+	}
 
-  .project-description {
-    font-family: var(--font-light);
-    color: var(--shade4);
-    font-size: 16px;
-    margin: 0px;
-    padding-top: 8px;
-    text-align: left;
-  }
+	.project-description {
+		font-family: var(--font-light);
+		color: var(--shade4);
+		font-size: 16px;
+		margin: 0px;
+		padding-top: 8px;
+		text-align: left;
+	}
 </style>

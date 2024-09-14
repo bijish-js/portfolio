@@ -123,12 +123,19 @@ export const skills = [
 ];
 
 export const projectData = [
+	// {
+	// 	title: "Widget Fusion",
+	// 	description:
+	// 		"Transform your website with our magical no-code tool! Effortlessly add custom widgets without any coding knowledge required.",
+	// 	image: "/images/widgetify-mockup.png",
+	// 	link: "https://widgetfusion.com",
+	// },
 	{
-		title: "Widget Fusion",
+		title: "Next.js Server Action Tester",
 		description:
-			"Transform your website with our magical no-code tool! Effortlessly add custom widgets without any coding knowledge required.",
-		image: "/images/widgetify-mockup.png",
-		link: "https://widgetfusion.com",
+			"Next.js Server Action Tester scans and tests server actions in Next.js projects, automating setup, generating metadata, and providing a UI to list, search, and execute functions.",
+		image: "/images/nextjs-server-action-tester-cover.webp",
+		link: "https://www.npmjs.com/package/nextjs-server-action-tester",
 	},
 	{
 		title: "GPT in Terminal",
@@ -136,12 +143,9 @@ export const projectData = [
 			"GPT-in-Terminal is a versatile and user-friendly command-line tool built with Node.js that allows developers to interact seamlessly with OpenAI's powerful GPT-3 language model.",
 		image: "/images/chat-gpt.png",
 		link: "https://www.npmjs.com/package/gpt-in-terminal",
+
 	},
-	// {
-	//     title: "Project 3",
-	//     description: "This is project 3 description.",
-	//     image: "/images/placeholder.svg"
-	// },
+
 ];
 
 export const EducationData = [

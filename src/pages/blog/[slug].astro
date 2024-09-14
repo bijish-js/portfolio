@@ -4,75 +4,81 @@ import ContainerLayout from "../../components/layouts/containerLayout.astro";
 import Navbar from "../../components/sections/Navbar.astro";
 import { ghostClient } from "../../lib/ghost";
 export async function getStaticPaths() {
-  const posts = await ghostClient.posts
-    .browse({
-      limit: "all",
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-  return posts.map((post) => {
-    return {
-      params: {
-        slug: post.slug,
-      },
-      props: {
-        post: post,
-      },
-    };
-  });
+	const posts = await ghostClient.posts
+		.browse({
+			limit: "all",
+		})
+		.catch((err) => {
+			console.error(err);
+		});
+	return posts.map((post) => {
+		return {
+			params: {
+				slug: post.slug,
+			},
+			props: {
+				post: post,
+			},
+		};
+	});
 }
 const { post } = Astro.props;
 ---
 
 <Layout title={post.title}>
-  <ContainerLayout>
-    <Navbar />
-    <div class="container2 blog-wrap">
-      <img src={post.feature_image} alt={post.title} class="feature-image" />
+	<ContainerLayout>
+		<Navbar />
+		<div class="container2 blog-wrap">
+			<img
+				src={post.feature_image}
+				alt={post.title}
+				class="feature-image"
+			/>
 
-      <h1 class="post-title">{post.title}</h1>
-      <p class="post-reading-time">{post.reading_time} min read</p>
-      <div class="html-wrap">
-        <Fragment set:html={post.html} />
-      </div>
-    </div>
-  </ContainerLayout>
+			<h1 class="post-title">{post.title}</h1>
+			<p class="post-reading-time">{post.reading_time} min read</p>
+			<div class="html-wrap">
+				<Fragment set:html={post.html} />
+			</div>
+		</div>
+	</ContainerLayout>
 </Layout>
 <style>
-  pre {
-    overflow-x: auto !important;
-    white-space: pre-wrap !important;
-    word-wrap: break-word !important;
-    color: red;
-  }
-  .blog-wrap {
-    /* background: var(--shade3); */
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .feature-image {
-    width: 100%;
-    object-fit: cover;
-    max-height: 300px;
-    height: 100%;
-  }
-  .post-title {
-    font-family: var(--font-bold);
-    color: var(--shade4);
-  }
-  .post-reading-time {
-    font-family: var(--font-bold);
-    color: var(--shade3);
-  }
+	pre {
+		overflow-x: auto !important;
+		white-space: pre-wrap !important;
+		word-wrap: break-word !important;
+		color: red;
+	}
+	.blog-wrap {
+		/* background: var(--shade3); */
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.feature-image {
+		width: 100%;
+		object-fit: cover;
+		max-height: 300px;
+		height: 100%;
+		border-radius: 16px;
+	}
+	.post-title {
+		font-family: var(--font-bold);
+		color: var(--shade4);
+	}
+	.post-reading-time {
+		font-family: var(--font-bold);
+		color: var(--shade3);
+	}
 
-  .html-wrap {
-    color: var(--shade4);
-    font-family: var(--font-light);
-    font-size: 18px;
-  }
-  .html-wrap > a {
-    color: var(--shade4) !important;
-    font-family: var(--font-light);
-  }
+	.html-wrap {
+		color: var(--shade4);
+		font-family: var(--font-light);
+		font-size: 18px;
+		line-height: 150%;
+	}
+	.html-wrap > a {
+		color: var(--shade4) !important;
+		font-family: var(--font-light);
+	}
 </style>

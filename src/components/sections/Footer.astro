@@ -5,17 +5,23 @@ const {} = Astro.props;
 ---
 
 <section class="footer-section" id="footer">
-  <p class="footer-text">COPYRIGHT © 2023 BIJISH O B</p>
+	<p class="footer-text">COPYRIGHT © <span id="year"></span> BIJISH O B</p>
 </section>
 
+<script>
+	document.getElementById("year").textContent = new Date()
+		.getFullYear()
+		?.toString();
+</script>
+
 <style>
-  .about-section-outer {
-    background: #000;
-    margin-top: 120px;
-  }
-  .footer-text {
-    text-align: center;
-    color: var(--shade4);
-    font-family: var(--font-light);
-  }
+	.about-section-outer {
+		background: #000;
+		margin-top: 120px;
+	}
+	.footer-text {
+		text-align: center;
+		color: var(--shade4);
+		font-family: var(--font-light);
+	}
 </style>
